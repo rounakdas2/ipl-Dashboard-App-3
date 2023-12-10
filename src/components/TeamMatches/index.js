@@ -40,7 +40,7 @@ class TeamMatches extends Component {
 
     const response = await fetch(`${teamMatchesApiUrl}${id}`)
     const fetchedData = await response.json()
-    const formattedDate = {
+    const formattedData = {
       teamBannerURL: fetchedData.team_banner_url,
       latestMatch: this.getFormattedData(fetchedData.latest_match_details),
       recentMatches: fetchedData.recent_matches.map(eachMatch =>
@@ -58,7 +58,7 @@ class TeamMatches extends Component {
     return (
       <ul className="recent-matches-list">
         {recentMatches.map(recentMatches => (
-          <MatchCard matchDetails={recentMatch} key={recentMatch.id} />
+          <MatchCard matchDetails={recentMatches} key={recentMatches.id} />
         ))}
       </ul>
     )
@@ -78,7 +78,7 @@ class TeamMatches extends Component {
   }
 
   renderLoader = () => (
-    <div testid="loader" className="loader-container">
+    <div data-testid="loader" className="loader-container">
       <Loader type="Oval" color="#ffffff" height={50} />
     </div>
   )
@@ -106,6 +106,7 @@ class TeamMatches extends Component {
       case 'DC':
         return 'dc'
       default:
+        return ''
     }
   }
 

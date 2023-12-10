@@ -33,7 +33,7 @@ class Home extends Component {
   }
 
   renderTeamsList = () => {
-    const {teamsDate} = this.state
+    const {teamsData} = this.state
 
     return (
       <ul className="teams-list">
@@ -45,7 +45,7 @@ class Home extends Component {
   }
 
   renderLoader = () => (
-    <div testid="loader" className="loader-container">
+    <div data-testid="loader" className="loader-container">
       <Loader type="Oval" color="#ffffff" height={50} />
     </div>
   )
