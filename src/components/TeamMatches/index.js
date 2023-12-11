@@ -57,8 +57,11 @@ class TeamMatches extends Component {
 
     return (
       <ul className="recent-matches-list">
-        {recentMatches.map(recentMatches => (
-          <MatchCard matchDetails={recentMatches} key={recentMatches.id} />
+        {recentMatches.map(recentMatchesItem => (
+          <MatchCard
+            matchDetails={recentMatchesItem}
+            key={recentMatchesItem.id}
+          />
         ))}
       </ul>
     )
